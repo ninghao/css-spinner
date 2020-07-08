@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  justify-content: space-around;
+  background: #000;
+}
+
+.stage {
+  position: relative;
+  width: 120px;
+  height: 40px;
+}
+
+.stage > div {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 8px;
+  position: absolute;
+  left: 40px;
+}
+
+.red-ball {
+  background: red;
+  animation: circle-around 1.8s infinite linear;
+  z-index: 3;
+}
+
+.yellow-ball {
+  background: yellow;
+  animation: circle-around 1.8s infinite linear;
+  animation-delay: -0.6s;
+  z-index: 2;
+}
+
+.blue-ball {
+  background: blue;
+  animation: circle-around 1.8s infinite linear;
+  animation-delay: -1.2s;
+  z-index: 1;
+}
+
+/* 动画 */
+@keyframes circle-around {
+  0% {
+    left: 40px;
+    z-index: 10;
+  }
+  25% {
+    left: 80px;
+    transform: scale(0.8);
+  }
+  50% {
+    left: 40px;
+    z-index: 1;
+    transform: scale(0.8);
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: 40px;
+    z-index: 10;
+  }
+}
